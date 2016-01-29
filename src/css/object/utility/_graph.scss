@@ -1,0 +1,18 @@
+// Graph
+//------------------------------------------------------
+.u-graph {
+  &__text {
+    font-size: 12px;
+    text-anchor: middle;
+  }
+
+  &__axis {
+    path, line {
+      fill: none;
+      stroke: #000;
+    }
+    text {
+      font-size: 14px;
+    }
+  }
+}

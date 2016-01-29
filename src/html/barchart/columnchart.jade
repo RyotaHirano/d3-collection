@@ -1,0 +1,20 @@
+extends /_layouts/base
+
+block vars
+  include /_settings/data
+
+  - var metaTitle = 'Bar Chart -- Column Chart';
+  
+block content
+  .l-main
+    .l-content
+      .l-content__head
+        .l-content__head__inner
+          h1.contents-title.u-pdef--a Simple Column Chart
+        
+            
+      .l-content__body.u-txta--c
+        .l-content__body__inner#stage
+  
+block js
+  script(type="application/javascript", src="../assets/js/main.js")

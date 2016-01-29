@@ -1,0 +1,33 @@
+// Content
+//------------------------------------------------------
+.l-content {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  &__head {
+    width: 100%;
+    min-height: 200px;
+    background-color: #FF8A1F;
+
+    &__inner {
+      width: 960px;
+      height: 100%;
+      margin: 0 auto;
+
+      .contents-title {
+        color: #320407;
+        font-size: 4vw;
+      }
+    }
+  }
+  &__body {
+    width: 960px;
+    height: auto;
+    margin: 0 auto;
+
+    &__inner {
+      margin-top: $margin-top;
+    }
+  }
+}

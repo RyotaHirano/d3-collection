@@ -1,0 +1,17 @@
+// Padding
+//------------------------------------------------------
+.u-pdef {
+  &--a {
+    padding: $padding;
+  }
+  &--t {
+    padding-top: $padding;
+  }
+  &--b {
+    padding-bottom: $padding;
+  }
+  &--lr {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}
