@@ -1,4 +1,7 @@
 import d3 from 'd3';
+
+const stage = '#stage-ColumnChart';
+
 const dataNum = 10;
 const margin = {
   top: 20,
@@ -20,8 +23,6 @@ let svg;
 let svgGroup;
 let svgBars;
 let svgTexts;
-const stage = '#stage';
-
 
 export default function columnChart() {
   data = createRandomArray(dataNum);

@@ -1,5 +1,10 @@
 // TextAlign
 //------------------------------------------------------
-.u-txta--c {
-  text-align: center;
+.u-txta {
+  &--c {
+    text-align: center;
+  }
+  &--r {
+    text-align: right;
+  }
 }
