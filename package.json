@@ -46,6 +46,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "d3": "^3.5.14"
+    "d3": "^3.5.14",
+    "glob-to-regexp": "^0.1.0",
+    "jquery": "^2.2.0"
   }
 }

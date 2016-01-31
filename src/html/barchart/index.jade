@@ -3,19 +3,18 @@ extends /_layouts/base
 block vars
   include /_settings/data
 
-  - var metaTitle = 'Bar Chart -- Column Chart';
+  - var metaTitle = 'Bar Chart';
   
 block content
   .l-main.u-margin--b
     .l-content
       .l-content__head.u-color--01
         .l-content__head__inner
-          h1.contents-title.u-pad--a Simple Column Chart
+          h1.contents-title.u-pad--a Simple Bar Chart
         .l-content__head__btns.u-pad--b.u-txta--r
-          .js-reset
-            button.js-reset.c-btn--reset Data Reset
+          button.js-reset.c-btn--reset Data Reset
       .l-content__body.u-txta--c
-        .l-content__body__inner#stage-ColumnChart
+        .l-content__body__inner#stage-BarChart
           
   include /_partials/g-footer
   

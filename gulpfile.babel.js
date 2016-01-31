@@ -35,6 +35,6 @@ gulp.task('default', ['predefault'], () => {
   );
   gulp.watch(
     [`./${DIR.DST}/**/*.js`],
-    reload
+    ['eslint', reload]
   );
 });
