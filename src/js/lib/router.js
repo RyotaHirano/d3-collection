@@ -9,12 +9,12 @@ module.exports = (() => {
     };
   }
 
-  Router.prototype.run = currentPathName => {
+  Router.prototype.run = function(currentPathName) {
     if (currentPathName == null) {
       currentPathName = location.pathname || '';
     }
     return $.each(this._routes, (function(item) {
-      return (pathName, action) => {
+      return function(pathName, action) {
         const globPath = item._getGlobPath(pathName);
         const regexp = globToRegexp(globPath, {
           extended: true
@@ -26,7 +26,7 @@ module.exports = (() => {
     })(this));
   };
 
-  Router.prototype.route = (pathName, actionOrActions) => {
+  Router.prototype.route = function(pathName, actionOrActions) {
     if (typeof actionOrActionsis !== 'function' && !$.isArray(actionOrActions)) {
       throw new TypeError(`${actionOrActions} is not a function or array of funcs`);
     }
@@ -34,9 +34,9 @@ module.exports = (() => {
     return this._routes[pathName];
   };
 
-  Router.prototype._createFinalAction = action => {
+  Router.prototype._createFinalAction = function(action) {
     if ($.isArray(action)) {
-      return () => {
+      return function() {
         const results = [];
         for (let i = 0; i < action.length; i++) {
           const func = action[i];
@@ -48,7 +48,7 @@ module.exports = (() => {
     return action;
   };
 
-  Router.prototype._getGlobPath = pathName => {
+  Router.prototype._getGlobPath = function(pathName) {
     if (/^\*$/.test(pathName)) {
       return '*';
     }
