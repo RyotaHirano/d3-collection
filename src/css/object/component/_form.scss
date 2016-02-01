@@ -1,0 +1,10 @@
+// Form
+//------------------------------------------------------
+.c-form {
+  &--select-ease {
+    display: inline-block;
+    vertical-align: super;
+    font-size: 1.2em;
+    margin-right: $margin-right;
+  }
+}

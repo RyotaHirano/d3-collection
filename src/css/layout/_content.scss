@@ -7,6 +7,10 @@
   margin: 0 auto;
   transition: $sidebar-transition;
 
+  &__menubtn {
+    max-width: 960px;
+    margin: 0 auto;
+  }
   &__head {
     width: 100%;
     min-height: 160px;
@@ -14,7 +18,7 @@
     &__inner {
       width: 960px;
       height: 100%;
-      margin: 0 30px;
+      margin: 0 auto;
 
       .contents-title {
         color: #320407;
