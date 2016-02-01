@@ -11,3 +11,12 @@ $sidebar-transition: transform .3s ease-in-out 0s;
 // Font
 $font-family: 'Bangers', cursive;
 $font-size: 14px;
+
+// Transition & Rotate (Hamburger Menu)
+$transition-time: .4s;
+$transition-time-long: 1s;
+$transition-time-short: .2s;
+$transition-ease: ease-in-out;
+$rotate-val: 360 * 3;
+$rotate-val-small: 360;
+$bar-top: 16px;

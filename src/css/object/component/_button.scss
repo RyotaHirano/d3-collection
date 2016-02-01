@@ -5,12 +5,10 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
-
   &:hover {
     opacity: 0.9;
   }
 }
-
 .c-btn {
   &--reset {
     @include c-btn;
@@ -18,16 +16,60 @@
     font-size: 1.2rem;
   }
 }
-
 .c-menubtn {
   display: block;
-  width: 40px;
+  width: 50px;
   height: 40px;
   position: absolute;
+  cursor: pointer;
   &-bar {
     display: block;
-    width: 40px;
-    height: 2px;
+    width: 30px;
+    height: 4px;
+    margin: 10px 0 0 10px;
+    border-radius: 10px;
     background-color: #000;
+    @include transition-property((all, opacity, background-color));
+    @include transition-delay(($transition-time-short / 2, $transition-time-short, $transition-time-short * 1.5));
+    &-top {
+      @include transform-origin(center);
+    }
+    &-middle {
+      opacity: 1;
+    }
+    &-bottom {
+      @include transform-origin(center);
+    }
+    & + .c-menubtn-bar {
+      margin-top: 4px;
+    }
+  }
+}
+.menu-open {
+  .c-menubtn {
+    &-bar {
+      @include transition-delay(($transition-time-short * 2, $transition-time-short, $transition-time-short * 1.5));
+      &-top {
+        @include myAnimation(humbergerMenuTop #{$transition-time-short * 2} #{$transition-time-short / 2} linear forwards);
+      }
+      &-middle {
+        opacity: 0;
+      }
+      &-bottom {
+        @include myAnimation(humbergerMenuBottom #{$transition-time-short * 2} #{$transition-time-short / 2} linear forwards);
+      }
+    }
+  }
+}
+.menu-close {
+  .c-menubtn {
+    &-bar {
+      &-top {
+        @include myAnimation(humbergerMenuTopClose #{$transition-time-short * 2} #{$transition-time-short / 2} linear backwards);
+      }
+      &-bottom {
+        @include myAnimation(humbergerMenuBottomClose #{$transition-time-short * 2} #{$transition-time-short / 2} linear backwards);
+      }
+    }
   }
 }

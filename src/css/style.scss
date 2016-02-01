@@ -16,6 +16,15 @@
 // Global
 @import "foundation/_global";
 
+// Transition
+@import "foundation/_transition";
+
+// Transform
+@import "foundation/_transform";
+
+// Animation
+@import "foundation/_animation";
+
 // ==========================================================================
 // Layout
 // ==========================================================================
@@ -57,7 +66,6 @@
 
   // Graph
   @import "object/utility/_graph"
-
 
 // ==========================================================================
 // Vendor

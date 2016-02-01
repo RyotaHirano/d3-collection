@@ -16,6 +16,27 @@
     margin: 0 auto;
     text-align: center;
   }
+
+  &__link-list {
+    margin: 10px 25px;
+    .link-list__item {
+      text-align: left;
+      &:first-child {
+        border-bottom: 1px solid #fff;
+        a {
+          padding-bottom: 10px;
+        }
+      }
+      & + .link-list__item {
+        margin-top: 20px;
+      }
+      a {
+        color: #fff;
+        font-size: 1.1rem;
+        display: block;
+      }
+    }
+  }
 }
 
 .menu-open .l-sidebar {

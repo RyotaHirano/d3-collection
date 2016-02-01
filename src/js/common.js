@@ -10,6 +10,12 @@ module.exports = function() {
       const mainHeight = mainContent.clientHeight + 40;
       sideBar.style.height = `${mainHeight}px`;
       body.classList.toggle('menu-open');
+      if (body.classList.contains('menu-open')) {
+        body.classList.add('menu-close');
+      } else {
+        body.classList.remove('menu-close');
+      }
+      !body.classList.toggle('menu-close');
     });
   };
 

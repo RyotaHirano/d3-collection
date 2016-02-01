@@ -14,11 +14,12 @@
     &__inner {
       width: 960px;
       height: 100%;
-      margin: 0 auto;
+      margin: 0 30px;
 
       .contents-title {
         color: #320407;
         font-size: 3rem;
+        padding-top: 40px;
       }
     }
     &__btns {
@@ -38,6 +39,8 @@
   }
 }
 
-.menu-open .l-content {
-  transform: translate3d($sidebar-width, 0, 0);
+.menu-open {
+  .l-content {
+    transform: translate3d($sidebar-width, 0, 0);
+  }
 }
