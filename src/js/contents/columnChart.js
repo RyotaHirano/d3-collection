@@ -95,17 +95,17 @@ export default function columnChart() {
 
     scaleY.domain([0, maxY]);
 
-    svgGroup.append('g')
+    svg.append('g')
       .attr({
         'class': 'u-graph__axis',
-        'transform': `translate(0, ${height})`
+        'transform': `translate(${margin.left}, ${height + margin.top})`
       })
       .call(svgAxisX);
 
-    svgGroup.append('g')
+    svg.append('g')
       .attr({
         'class': 'u-graph__axis',
-        'transform': `translate(0, 0)`
+        'transform': `translate(${margin.left}, ${margin.top})`
       })
       .call(svgAxisY);
 

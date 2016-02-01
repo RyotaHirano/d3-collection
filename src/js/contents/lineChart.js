@@ -2,7 +2,6 @@ import d3 from 'd3';
 
 export default function lineChart() {
   const stage = '#stage-LineChart';
-  const dataNum = 10;
 
   const margin = {
     top: 20,

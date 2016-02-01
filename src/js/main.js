@@ -4,12 +4,14 @@ import commonAction from './common';
 import barChart from './contents/barChart';
 import columnChart from './contents/columnChart';
 import lineChart from './contents/lineChart';
+import pieChart from './contents/pieChart';
 
 const router = new Router({
   '*': commonAction,
   '/barchart': barChart,
   '/columnchart': columnChart,
-  '/linechart': lineChart
+  '/linechart': lineChart,
+  '/piechart': pieChart
 }, {
   rootPath: ''
 });
