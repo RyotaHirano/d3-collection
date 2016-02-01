@@ -5,6 +5,7 @@
   min-width: 960px;
   height: auto;
   margin: 0 auto;
+  transition: $sidebar-transition;
 
   &__head {
     width: 100%;
@@ -35,4 +36,8 @@
       margin-top: $margin-top;
     }
   }
+}
+
+.menu-open .l-content {
+  transform: translate3d($sidebar-width, 0, 0);
 }

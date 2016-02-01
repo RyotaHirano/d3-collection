@@ -1,0 +1,23 @@
+// SideBar
+//------------------------------------------------------
+.l-sidebar {
+  width: $sidebar-width;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0EB4AE;
+  transform: translate3d(-$sidebar-width, 0, 0);
+  transition: $sidebar-transition;
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.menu-open .l-sidebar {
+  transform: translate3d(0, 0, 0);
+}

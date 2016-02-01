@@ -18,3 +18,16 @@
     font-size: 1.2rem;
   }
 }
+
+.c-menubtn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  &-bar {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #000;
+  }
+}

@@ -7,9 +7,10 @@ export default function barChart() {
 
   const padding = 20;
   const width = 840;
-  const height = 380;
+  const height = 420;
   const fill = d3.scale.category20();
   const interval = [padding, width - padding];
+  const dataY = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
   let svgGroup;
   let svgBars;
   let svgTexts;
@@ -18,12 +19,13 @@ export default function barChart() {
   const scaleX = d3.scale.linear()
     .domain([0, 100])
     .range(interval);
+  const scaleY = d3.scale.ordinal().rangeRoundBands([padding, height - padding], 0.01);
 
   createGraph();
 
   d3.select('.js-reset')
     .on('click', () => {
-      resetData();
+      resetData(false);
     });
 
   function createGraph() {
@@ -32,49 +34,56 @@ export default function barChart() {
         width,
         height
       });
-    svgGroup = svg.selectAll('g')
-      .append('g')
-      .data(data)
-      .enter()
-      .append('g');
+    svgGroup = svg.append('g')
+                  .attr({
+                    transform: 'translate(0, 20)'
+                  })
+                  .selectAll('g')
+                  .append('g')
+                  .data(data)
+                  .enter()
+                  .append('g');
     svgBars = svgGroup.append('rect')
-      .attr({
-        x: padding,
-        y(d, i) {
-          return i * 35;
-        },
-        width(d) {
-          return scaleX(d[0]) - padding;
-        },
-        height: 30,
-        fill(d, i) {
-          return fill(i);
-        }
-      });
-    svgTexts = svgGroup.append('text')
-      .text(d =>
-        d[0]
-      )
       .attr({
         'x': padding,
         y(d, i) {
-          return i * 35;
+          return i * 37;
         },
-        'class': 'graph-value',
-        'transform': 'translate(0, 20)'
+        'width': 0,
+        'height': 30,
+        'transform': 'translate(0, -7)',
+        fill(d, i) {
+          return fill(i);
+        },
+        'fill-opacity': 0
       });
-    const svgAxis = d3.svg.axis()
+
+    scaleY.domain(data.map(function(d, i) {
+      return dataY[i];
+    }));
+    const svgAxisX = d3.svg.axis()
       .scale(scaleX)
       .orient('bottom');
     svg.append('g')
       .attr({
-        'class': 'axis-x',
-        'transform': 'translate(0, 140)'
+        'class': 'u-graph__axis',
+        'transform': 'translate(0, 385)'
       })
-      .call(svgAxis);
+      .call(svgAxisX);
+    const svgAxisY = d3.svg.axis()
+      .scale(scaleY)
+      .orient('left');
+    svg.append('g')
+      .attr({
+        'class': 'u-graph__axis',
+        'transform': 'translate(20, -15)'
+      })
+      .call(svgAxisY);
+
+    resetData(true);
   }
 
-  function resetData() {
+  function resetData(delay) {
     const newData = createRandomArray(dataNum);
     const beforeData = data;
     data = newData;
@@ -82,23 +91,32 @@ export default function barChart() {
     svgBars
       .data(newData)
       .transition()
-      .duration(400)
+      .delay(function(d, i) {
+        if (!delay) {
+          return 0;
+        }
+        return i * 200;
+      })
       .attr({
+        'fill-opacity': 1,
         width(d) {
           return scaleX(d[0]) - padding;
         }
       });
 
-    svgTexts.remove();
+    // 初期表示時はtext要素は存在しないため
+    if (d3.select('.u-graph__text')[0][0]) {
+      svgTexts.remove();
+    }
     svgTexts = svgGroup
       .append('text')
       .attr({
         'x': padding,
         y(d, i) {
-          return i * 35;
+          return i * 37;
         },
-        'class': 'graph-value',
-        'transform': 'translate(0, 20)'
+        'class': 'u-graph__text',
+        'transform': 'translate(10, 14)'
       })
       .data(newData)
       .each(
