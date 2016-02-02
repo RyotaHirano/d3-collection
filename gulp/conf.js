@@ -1,6 +1,6 @@
 export const DIR = {
   SRC: 'src',
-  DST: 'dst',
+  DST: 'dst/d3-collection',
   BUILD: 'public',
   IMG: 'images'
 };
