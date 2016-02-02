@@ -27437,7 +27437,7 @@ module.exports = debounce;
 'use strict';
 
 module.exports = function () {
-  if (window.location.pathname !== '/') {
+  if (window.location.pathname !== '/d3-collection/') {
     (function () {
       var body = document.querySelector('body');
       var mainContent = document.querySelector('.l-main');
@@ -28171,7 +28171,7 @@ module.exports = function () {
   function Router(_routes, _config) {
     this._routes = _routes != null ? _routes : {};
     this._config = _config != null ? _config : {
-      rootPath: 'd3-collection'
+      rootPath: ''
     };
   }
 
@@ -28271,7 +28271,7 @@ var router = new _router2.default({
   '/linechart': _lineChart2.default,
   '/piechart': _pieChart2.default
 }, {
-  rootPath: 'd3-collection'
+  rootPath: '/d3-collection'
 });
 
 router.run();
