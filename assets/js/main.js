@@ -28271,7 +28271,7 @@ var router = new _router2.default({
   '/linechart': _lineChart2.default,
   '/piechart': _pieChart2.default
 }, {
-  rootPath: ''
+  rootPath: 'd3-collection'
 });
 
 router.run();
