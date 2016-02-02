@@ -6,5 +6,10 @@
     vertical-align: super;
     font-size: 1.2em;
     margin-right: $margin-right;
+    font-family: $font-family;
+
+    label {
+      font-size: 1.2rem;
+    }
   }
 }

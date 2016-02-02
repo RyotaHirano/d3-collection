@@ -6,9 +6,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #0EB4AE;
   transform: translate3d(-$sidebar-width, 0, 0);
   transition: $sidebar-transition;
+  font-family: $font-family;
 
   &__inner {
     width: 100%;
@@ -18,7 +18,7 @@
   }
 
   &__link-list {
-    margin: 10px 25px;
+    margin: 30px 25px;
     .link-list__item {
       text-align: left;
       &:first-child {
