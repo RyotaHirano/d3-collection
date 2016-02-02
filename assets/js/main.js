@@ -28171,7 +28171,7 @@ module.exports = function () {
   function Router(_routes, _config) {
     this._routes = _routes != null ? _routes : {};
     this._config = _config != null ? _config : {
-      rootPath: ''
+      rootPath: 'd3-collection'
     };
   }
 
@@ -28271,7 +28271,7 @@ var router = new _router2.default({
   '/linechart': _lineChart2.default,
   '/piechart': _pieChart2.default
 }, {
-  rootPath: '/d3-collection'
+  rootPath: 'd3-collection'
 });
 
 router.run();
