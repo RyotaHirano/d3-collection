@@ -1,6 +1,7 @@
 export const DIR = {
+  PATH: '/d3-collection',
   SRC: 'src',
-  DST: 'dst/d3-collection',
+  DST: 'dst',
   BUILD: 'public',
   IMG: 'images'
 };
@@ -9,7 +10,7 @@ export const sass = {
   src: [
     `${DIR.SRC}/**/*.{scss,sass}`
   ],
-  dst: `${DIR.DST}/assets/css`
+  dst: `${DIR.DST}${DIR.PATH}/assets/css`
 };
 
 export const eslint = {
@@ -22,7 +23,7 @@ export const jade = {
     `!${DIR.SRC}/**/_**/*.jade`,
     `!${DIR.SRC}/**/_*.jade`
   ],
-  dst: `${DIR.DST}/`,
+  dst: `${DIR.DST}${DIR.PATH}/`,
   opts: {
     pretty: true,
     basedir: `${DIR.SRC}/html`
@@ -34,7 +35,7 @@ export const scripts = {
     entries: [`./${DIR.SRC}/js/main.js`],
     transform: ['babelify']
   },
-  dst: `${DIR.DST}/assets/js`
+  dst: `${DIR.DST}${DIR.PATH}/assets/js`
 };
 
 export const serve = {
@@ -42,13 +43,13 @@ export const serve = {
   reloadDebounce: 2000,
   ui: false,
   notify: false,
-  startPath: DIR.SITE_ROOT_PATH,
+  startPath: DIR.PATH,
   ghostMode: false,
   server: {
     baseDir: './',
-    index: `${DIR.DST}/`,
+    index: `${DIR.DST}${DIR.PATH}/`,
     routes: {
-      ['']: `${DIR.DST}/`
+      [DIR.PATH]: `${DIR.DST}${DIR.PATH}/`
     }
   }
 };

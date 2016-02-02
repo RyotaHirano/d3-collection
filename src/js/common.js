@@ -1,5 +1,5 @@
 module.exports = function() {
-  if (window.location.pathname !== '/') {
+  if (window.location.pathname !== '/d3-collection/') {
     const body = document.querySelector('body');
     const mainContent = document.querySelector('.l-main');
     const menuBtn = document.querySelector('#js-menubtn');

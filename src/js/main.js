@@ -15,7 +15,7 @@ const router = new Router({
   '/linechart': lineChart,
   '/piechart': pieChart
 }, {
-  rootPath: ''
+  rootPath: '/d3-collection'
 });
 
 router.run();
