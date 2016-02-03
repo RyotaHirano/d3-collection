@@ -33,11 +33,17 @@ export default function top() {
     }
   }
 
+  const removeCover = elem => {
+    if (elem) {
+      elem.parentNode.removeChild(elem);
+    }
+  };
+
   const hideSpinner = () => {
     const spinnerCover = document.querySelector('.js-spinner-wrapper');
     Tweenmax.set(spinnerCover, {
       opacity: 0,
-      onComplete: spinnerCover.remove()
+      onComplete: removeCover(spinnerCover)
     });
   };
 
