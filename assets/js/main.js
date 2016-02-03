@@ -28339,11 +28339,17 @@ function top() {
     return Motion;
   }();
 
+  var removeCover = function removeCover(elem) {
+    if (elem) {
+      elem.parentNode.removeChild(elem);
+    }
+  };
+
   var hideSpinner = function hideSpinner() {
     var spinnerCover = document.querySelector('.js-spinner-wrapper');
     _gsap2.default.set(spinnerCover, {
       opacity: 0,
-      onComplete: spinnerCover.remove()
+      onComplete: removeCover(spinnerCover)
     });
   };
 
