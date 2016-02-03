@@ -746,6 +746,14 @@ a {
   .c-form--select-ease label {
     font-size: 1.2rem; }
 
+.c-spinner-cover {
+  width: 100%;
+  height: auto;
+  background-color: #777;
+  position: fixed;
+  top: 0;
+  bottom: 0; }
+
 .p-top-cover {
   width: 100%;
   height: auto; }
