@@ -780,6 +780,7 @@ a {
       width: 100%;
       height: 200px;
       display: table;
+      visibility: hidden;
       box-sizing: border-box;
       transition: opacity .3s; }
       .p-top-links__list .list__item a {
