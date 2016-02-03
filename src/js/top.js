@@ -33,6 +33,14 @@ export default function top() {
     }
   }
 
+  const hideSpinner = () => {
+    const spinnerCover = document.querySelector('.js-spinner-wrapper');
+    Tweenmax.set(spinnerCover, {
+      opacity: 0,
+      onComplete: spinnerCover.remove()
+    });
+  };
+
   const coverFitting = () => {
     const cover = document.querySelector('.js-cover');
     const coverHeight = window.innerHeight;
@@ -92,6 +100,7 @@ export default function top() {
 
   document.addEventListener('DOMContentLoaded', () => {
     coverFitting();
+    hideSpinner();
     setPosition();
     titleShowAnimation();
     introShow();
