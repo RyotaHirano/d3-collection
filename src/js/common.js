@@ -20,8 +20,22 @@ module.exports = function() {
       });
     };
 
+    const coverFitting = () => {
+      const cover = document.querySelector('.js-content-cover');
+      if (cover) {
+        const winHeight = window.innerHeight;
+        const footer = document.querySelector('.js-footer');
+        const footerHeight = footer.offsetHeight;
+        const fittingHeight = winHeight - footerHeight;
+        if (fittingHeight > 500) {
+          cover.style.height = `${fittingHeight}px`;
+        }
+      }
+    };
+
     const init = () => {
       toggleMenu();
+      coverFitting();
     };
 
     init();
