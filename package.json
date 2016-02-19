@@ -39,6 +39,7 @@
     "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^4.2.0",
     "licensify": "^2.0.1",
+    "path-dispatcher": "^1.1.2",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4",
     "vinyl-source-stream": "^1.1.0",

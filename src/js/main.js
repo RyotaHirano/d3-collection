@@ -1,4 +1,4 @@
-import Router from './lib/router';
+import pathDispatcher from 'path-dispatcher';
 
 import commonAction from './common';
 import topAction from './top';
@@ -7,7 +7,7 @@ import columnChart from './contents/columnChart';
 import lineChart from './contents/lineChart';
 import pieChart from './contents/pieChart';
 
-const router = new Router({
+const dispatcher = pathDispatcher({
   '*': commonAction,
   '/': topAction,
   '/barchart': barChart,
@@ -18,4 +18,4 @@ const router = new Router({
   rootPath: '/d3-collection'
 });
 
-router.run();
+dispatcher.dispatch();
