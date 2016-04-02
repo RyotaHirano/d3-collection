@@ -1,7 +1,7 @@
 {
-  "name": "starterKit_browserify",
+  "name": "d3-collection",
   "version": "0.0.0",
-  "description": "starterKit_browserify",
+  "description": "d3-collection",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
